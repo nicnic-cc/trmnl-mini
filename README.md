@@ -71,7 +71,7 @@ Additionally 10k resistor from VCC to PIN 4
 ```
 
 ## Case
-The case was designed by me in Fusion360. I designed in in a similar style of the case I did for my [Seeed OG DIY Kit TRMNL](https://makerworld.com/en/models/1888836-trmnl-seeed-diy-og-kit-case).
+The case was designed by me in Fusion360. I designed it in a similar style of the case I did for my [Seeed OG DIY Kit TRMNL](https://makerworld.com/en/models/1888836-trmnl-seeed-diy-og-kit-case).
 
 It has a couple of parts:
 - Front
