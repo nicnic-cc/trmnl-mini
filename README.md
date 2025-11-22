@@ -73,6 +73,8 @@ Additionally 10k resistor from VCC to PIN 4
 ## Case
 The case was designed by me in Fusion360. I designed it in a similar style of the case I did for my [Seeed OG DIY Kit TRMNL](https://makerworld.com/en/models/1888836-trmnl-seeed-diy-og-kit-case).
 
+I've printed the case on Bambu Lab P1S with Bambu Lab Matte PLA Bone White filament.
+
 It has a couple of parts:
 - Front
 - Display ring
@@ -92,11 +94,10 @@ All the files for the case are in `/case`:
 There is also a `.3mf` with everything set up on plates with Bambu Studio.
 
 I designed a stand for it as well (visible in the pictures), which angles the display nicely for desktop usage. It can be used in two different configurations.  
-I'd consider it beta for now though - the tolerances are not quite how I would like them to be and I am also unsure about the stability.
 
-![](./docs/IMG_8573.jpeg)
-
-I've printed the case on Bambu Lab P1S with Bambu Lab Matte PLA Bone White filament.
+![](./docs/IMG_8691.jpeg)
+![](./docs/IMG_8692.jpeg)
+![](./docs/IMG_8693.jpeg)
 
 ## Assembly
 Assembly steps assume everything is soldered and you have confirmed it works.
