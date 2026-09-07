@@ -20,13 +20,23 @@ Here is a comparison of the fully built device to a "normal sized" TRMNL (7.5") 
 ![](./docs/IMG_8579.jpeg)
 
 ## Firmware
-This repository has a lightly edited TRMNL's firmware in `/firmware`.
-Firmware is currently based on `v16.10.0`.
+The firmware in `/firmware` is a git submodule pointing at my fork of TRMNL's firmware,
+[nicnic-cc/trmnl-firmware](https://github.com/nicnic-cc/trmnl-firmware), tracking the
+`firebeetle` branch.
 
-Changes:
-- Added new ENV `[env:dfrobot_firebeetle2_esp32e]`
-- Added Firebeetle 2 ESP32-3 board pin definition
-- Removed static `bb_epaper` library, added a `2.0.0` version that supports the Waveshare 4.26" e-ink panel
+That branch is a thin overlay on top of upstream `main` - currently `v1.8.16` - rather than
+a long-lived edited copy, so it can just be rebased whenever TRMNL ship changes.
+`scripts/sync-upstream.sh` in the firmware repo does the whole sync: fast-forwards `main`
+from upstream, rebases the overlay on top, pushes.
+
+Changes on top of upstream:
+- Added the `[env:dfrobot_firebeetle2_esp32e]` build env
+- Added the Firebeetle 2 ESP32-E to the board table - SPI pins, button and battery
+- Forced full refresh on the 4.26" panel, because fast and partial updates render as noise on it
+
+Upstream has since absorbed most of what I used to patch by hand: `bb_epaper` is a managed
+dependency now instead of a vendored copy, the 4.26" panel is a
+first-class panel type, and board pins live in a data table rather than `#define`. So the overlay is down to about 120 lines across three files.
 
 ## Requirements
 - [Waveshare 4.26" 800x480 e-ink panel with HAT](https://www.waveshare.com/4.26inch-e-paper-hat.htm)
